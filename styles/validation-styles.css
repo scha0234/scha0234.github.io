@@ -5,62 +5,66 @@ body {
 
 		.input-container {
 			max-width: 400px;
-			margin-left: auto;
-			margin-right: auto;
-			padding-left: 10px;
-			padding-bottom: 15px;
+			margin: 20px;
+			/*This is an easy alternative for clearfix*/
+			/*Should only be used if clearfix can not be added for some reason*/
 			overflow: hidden;
 		}
 
 		input[type=text], 
 		textarea,
 		input[type=email],
+		input[type=password],
 		select {
 
 			padding: 5px;
 			display: block;
+			float: left;
 			border: 1px solid gray;
 			width: 70%;
 			box-sizing: border-box;
 			transition: all 0.3s ease-out;
 		}
 
-		label.input-container {
-
+		label.input-label {
+			float: left;
 			width: 30%;
 			box-sizing: border-box;
 		}
 
 		.feedback {
+
 			float: left;
 			width: 100%;
-			padding: 5px;
+			padding: 10px;
+			margin-top: 10px;
 			display: none;
-			font-size: 12px;
 		}
+
+		/*Success Styles*/
+
+		.has-success .label-text {
+			color:green;
+		}
+
 		.has-success input[type=text],
 		.has-success input[type=email],
 		.has-success input[type=password],
 		.has-success textarea {
 			border: 1px solid green;
-			background: lightgreen;
 		} 
-		.has-success .feedback {
-			display: hide;
-		}
-
 
 		/*Error Styles*/
 
-		.has-error .input-label {
+		.has-error .label-text {
 			color:red;
 		}
 
 		.has-error input[type=text],
 		.has-error input[type=email],
+		.has-error input[type=password],
 		.has-error textarea {
 			border: 1px solid red;
-			background: pink;
 		} 
 
 		.has-error .feedback {

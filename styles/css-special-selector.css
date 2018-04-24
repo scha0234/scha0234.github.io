@@ -1,0 +1,112 @@
+/*CSS reset*/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	margin: 20px;
+}
+
+a {
+	text-decoration: none;
+	display: inline-block;
+	margin-top: 20px;
+}
+
+a:before, a:after {
+	/*content:"" is required to enable a pseudo element*/
+	content: "";
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	background-size: 100%;
+	margin: 0 10px;
+}
+
+/*Attribute present selector*/
+/*This selects an element if the given attribute is present*/
+/*Syntax - element[attribute]*/
+a[target]:after {
+	background-image: url("../images/icons/target.png");
+}
+
+/*Attribute Equals selector*/
+/*selects an element if the given attribute value matches with the value specified*/
+/*Syntax - element[attribute=required-value] */
+a[href="http://google.com/"]:before {
+	background-image: url("../images/icons/google.png");
+}
+
+/*Attribute Contains Selector*/
+/*Selects an element if the given attribute value is contained atlease once in the value stated*/
+/*Syntax - element[attribute*=value]*/
+a[href*="download"]:after {
+	background-image: url("../images/icons/download.png");
+}
+
+/*Attribute Begins with Selector*/
+/*Selects the element that has attribute value that begins with the specificed value*/
+/*Syntax - element[attribute^="value"] */
+a[href^="https://"]:before {
+	background-image: url("../images/icons/lock.png");
+}
+
+/*Attribute Ends with Selector*/
+/*Selects the elment that has attribute value ending with the specified value*/
+/*Syntaxt element[attribute$="value"]*/
+/*Only PDFS*/
+a[href$=".pdf"]:before {
+	background-image: url("../images/icons/pdf.png");	
+}
+
+/*Only docs*/
+a[href$=".doc"]:before {
+	background-image: url("../images/icons/doc.png");	
+}
+
+/*only jpg*/
+a[href$=".jpg"]:before {
+	background-image: url("../images/icons/img.png");	
+}
+
+/*Attribute spaced selector*/
+/*Selects an element if the given attribute value is whitespace-separated with one word being exaclty as stated*/
+a[rel~="tag"]:after{
+	background-image: url("../images/icons/no-follow.png");
+}
+
+/*Attribute Hyphenated Selector*/
+/*Selects and element if the given attribute vlaue is hypen-separated and begins with the word stated*/
+a[lang|="en"]:before{
+	background-image: url("../images/icons/en.png");
+}
+
+/*Pseudo Mathematical Selectors*/
+
+/*First child selector*/
+li:first-child {
+	background: greenyellow;
+}
+
+/*Even elements*/
+li:nth-child(even) {
+	background:gold;
+}
+
+/*target every third element*/
+
+li:nth-child(3n) {
+	background: hotpink;
+}
+
+/*li:nth-child(2n) can be used to target every second element*/
+
+/*target the 7th child*/
+li:nth-child(7) {
+	background: violet;
+}
+/*Last child selector*/
+li:last-child {
+	background:lightsalmon;
+}

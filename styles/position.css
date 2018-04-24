@@ -1,0 +1,137 @@
+/*http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*CSS clearfix*/
+
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+#container {
+	width: 1000px;
+	background: #45B5D2;
+	margin: 0 auto; /*margin: 0 auto is used to center element horizontally*/
+}
+
+section {
+	background: #006E10;
+
+	/*IMPORTANT*/
+	/*if this is not declared, the positioning of element will be relative to the root i.e. HTML tag*/
+	position: relative;
+}
+
+.box {
+	width: 300px;
+	/*height = padding-top means you will achieve a square box with text center aligned vertically*/
+	height: 150px;
+	padding-top: 150px;
+	text-align: center;
+	background: #F9BB20;
+	font-size: 24px;
+	border: 1px solid #666;
+	border-radius: 50%;
+	/*border radius : 50% gives a perfect circle if you have height+padding-top = width of element */
+}
+
+.box {
+
+	position: relative;
+	/*position relative is positioning an element relative to its parent, this is also default behaviour*/
+	top: 20px;
+	/*this defines position from top of parent(section)*/
+	left: 20px;
+	/*this defines position from left of parent*/
+}
+
+.b1 {
+	position: absolute;
+	/*position absolute positions the element absolutely relative to the parent*/
+	/*It means it ignores the positioning of its siblings*/
+	top: 40px;
+	left: 50px;
+	z-index: 1;
+	/* z-index is the placement of overlapping elements*/
+	/*higher the value, closer to the screen element is */
+	/*for z-index to work, an element must have a position declaration*/
+}
+
+.b2 {
+	position: static;
+	/*position static removes postioning from element*/
+	top:10000000000000px;
+	/*top is ignored as the positioning has been removed*/
+	z-index: 100000000000px;
+	/*z-index is ignored as the postioning has been removed*/
+}
+
+.b3 {
+	position: absolute;
+	top: 200px;
+	z-index: 1;
+}
+
+.b4 {
+	position: fixed;
+	/* position fixed, positions the element relative to the browser*/
+	/*the following code along with position:fixed will make the element centred horizontally and vertically on the screen*/
+	top:50%;
+	left: 50%;
+	z-index: 3;
+	/*margin top = -(height/2)*/
+	/*In this case as total height = 150px + 150px = 300px*/
+	/*-(300/2) = -150px*/
+	margin-top: -150px;
+	/*margin left = -(width/2)*/
+	/*width = 300px*/
+	/*-(300)/2 = -150px */
+	margin-left: -150px;
+}

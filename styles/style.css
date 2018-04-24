@@ -1,0 +1,529 @@
+ /*http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*CSS clearfix*/
+
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+
+/*
+	Color Pallete
+
+	Primary Blue : #1976D2;
+	Light blue : #BBDEFB;
+	Primary Text : #212121;
+	Gray : #757575;
+	Orange : #FF5722;
+	Red : #F44336;
+	Yellow : #FFEB3B;
+*/
+
+/*Loader Animation*/
+
+		.overlay-container {
+
+			/*position:fixed makes the element fix itself in position relative to the browser*/
+			position: fixed;
+			/*We make overlay width:100% and height:100% to make this element cover the enitre browser screen*/
+			width: 100%;
+			height: 100%;
+			background: rgba(0,0,0,1);
+			/*background:rgba is used to create see-through background*/
+			/*rgb part is used to define red, greem and blue color values*/
+			/*a part is the alpha chanel, which defines the opactity of this element's background*/
+			/*alpha chanel ranges from 0 - 1, eg(0.1, 0.55, 0.98, 0, 1)*/
+			/* 0 here being fully transparent*/
+			/*1 here being fully opaque*/
+
+			z-index: 2;
+			/* z index is used to make an element closer to screen*/
+			/*to create an overlay, this element must have the highest z-index value*/
+			/* eg if another element on your document has z-index : 1000, then this element must have atleast z-index value of 1001 */
+		}
+
+		.loader {
+
+			/*This is used to center an element on the screen both vertically and horizontally*/
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width: 150px;
+			height: 150px;
+			margin: -75px 0 0 -75px;
+			/*margin is given based on the width and heigh of the element*/
+			/*margin-top: -(height/2)*/
+			/*margin-left : - (width/2)*/
+			/*margin : -(150/2) 0 0 -(150/2) */
+			border: 16px solid #f3f3f3;
+			/*border-radius 50% is used to crearte circles*/
+			border-radius: 50%;
+			border-top: 16px solid #3498db;
+
+			/*animation: name duration timing-function repetition*/
+			/*to define more than one CSS animation, use comma separated values*/
+			/*to increase readablity we define different animations in separate lines*/
+			animation: 
+				spin 2s linear infinite,
+				change-color 4s ease-in-out infinite,
+				border-radius-change 1s ease infinite;
+			
+
+		}
+
+		/*keyframes declarion is used to define animation*/
+		/*syntax - @keyframes name-of-the-animation*/
+		/*The following keyframes declaration is used to spin an element on the screen*/
+		@keyframes spin {
+			/*from sets the start of the property in an animation*/
+			from {
+				transform: rotate(0deg);
+			}
+			/*to sets the ending of the property in an animation*/
+			to {
+				transform: rotate(360deg);
+			}
+		}
+
+		/*This @keyframes declaration will change the color from blue to orange to blue */
+		@keyframes change-color {
+			/*0 % is begining*/
+			0% {
+				border-top-color: #3498db;
+			}
+
+			/*50% is the middle*/
+			50% {
+				border-top-color: #FF5722;
+			}
+			/*100% is ending*/
+			100% {
+				border-top-color: #3498db;
+			}
+		}
+
+		@keyframes border-radius-change {
+
+			0% {
+				border-radius: 50%;
+			}
+
+			50% {
+
+				border-radius: 0%;
+			}
+
+			100% {
+
+				border-radius: 50%;
+			}
+		}
+
+/************************
+		MOBILE FIRST
+************************/
+
+/*Make sure major containers in your HTML file are set to 100% width to achieve Fluid Layout */
+.col-main, .col-footer, img {
+	width:100%;
+}
+
+/* Header styles */ 
+header {
+	background: #757575;
+
+}
+
+.logo {
+	float: left;
+	width:120px;
+	padding: 15px;
+	box-sizing: border-box;
+	background: #1976D2;
+	/*box-sizing border box makes the width adjust according to padding*/
+}
+
+.desktop-nav {
+	float: right;
+	width: calc(100% - 100px);
+	display: none;
+	/*max width is used in fluid layout to restrict the width of elements that are set to 100% width*/
+	/*This is to make sure the content remains in the readable area for screen sizes that are larger than a tablet*/
+	max-width: 600px;
+}
+
+.desktop-nav ul {
+	width:100%;
+}
+
+.desktop-nav li {
+	box-sizing: border-box;
+	width: 33%;
+	float: left;
+	background: #F44336;
+	/*This is required to make sub-nav positioned absolute to the main navigation li containers*/
+	position: relative;
+}
+
+/*Target the first child and add border-top-left, border-bottom-left radius*/
+.desktop-nav li:first-child {
+	border-radius: 10px 0 0 10px;
+}
+
+/*target the last child and add border-top-right and border-top-left radius*/
+.desktop-nav li:last-child {
+	border-radius: 0 10px 10px 0;
+}
+
+.main-nav a {
+	display: block;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 10px;
+	border-left: 2px solid #444;
+}
+
+/* Target the first child and remove border-left from the a tag contained in that li*/
+.desktop-nav li:first-child a {
+	border-left: 0;
+} 
+
+.desktop-nav li .sub-nav li {
+	width: 100%;
+}
+
+.desktop-nav li .sub-nav li a {
+
+	background: #BBDEFB;
+	border-left: none;
+	border-bottom: 2px solid #444;
+}
+
+.sub-nav {
+	position: absolute;
+	width: 100%;
+	display: none;
+	/*box shadow is used to add shadow to the HTML elements, giving them a 3d effect*/
+	/*box shadow : left-offset top-offset blur color*/
+	box-shadow: 4px 4px 10px rgba(0,0,0,0.5);
+}
+
+/*This piece of CSS is used to make sub-nav show when the main li is hovered */
+/* > is called the direct child selector*/
+.desktop-nav > ul > li:hover .sub-nav {
+	display: block;
+}
+
+.ham {
+	float: right;
+	/*background: #BBDEFB;*/
+}
+
+.ham {
+		
+		height: 15px;
+		margin:15px;
+		padding-top: 5px;
+		position: relative;
+		float: right;
+		/*this is used to create a pointer for element*/
+		cursor: pointer;
+	}
+
+	.ham, .ham:before, .ham:after {
+		width: 30px;
+		border-top: 5px solid black;
+	}
+
+	.ham:before {
+		content: "";
+		display:block;
+		position: absolute;
+		background: black;
+	}
+
+	.ham:after {
+		content: "";
+		display: block;
+		background: black;
+		position: absolute;
+		bottom: 0;
+	}
+
+.mobile-nav {
+	width:100%;
+	clear: both;
+	position: absolute;
+	display: none;
+	z-index: 99999;
+}
+
+.mobile-nav-container {
+	position: relative;
+	clear: both;
+	
+}
+
+.mobile-nav li {
+	box-sizing: border-box;
+	width:100%;
+	padding: 10px;
+	background: lightgreen;
+	border-bottom: 2px solid #121212;
+
+}
+
+
+
+/*main content styles*/
+
+.site-content {
+
+	background: #BBDEFB;
+	padding: 15px;
+	width:100%;
+	box-sizing: border-box;
+}
+
+.site-sidebar {
+	background: #1976D2;
+	padding: 15px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+
+/*IMAGE GALLERY */
+
+/*reducing opacity for the img-slide-thumb inactive elements*/
+.image-gallery .img-slide-thumb {
+	width: 33%;
+	padding: 10px;
+	box-sizing: border-box;
+	float: left;
+	opacity: 0.5;
+}
+
+/*making the image slide thumb active class and giving it opacity:1; */
+.image-gallery .img-slide-thumb.img-slide-thumb-active {
+	opacity: 1;
+}
+
+.image-gallery-container {
+	position: relative;
+	width: 100%;
+}
+/*hiding all the image slides*/
+.img-slide {
+	display: none;
+	position: absolute;
+	width: 100%;
+}
+
+.img-overlay-text {
+	position: absolute;
+	text-align: center;
+	font-size: 80px;
+	font-weight: bold;
+	color:#FFF;
+	top: 90%;
+	width: 100%;
+	/*text shadow is used to add shadows to text*/
+	text-shadow: 2px 2px 5px #000;
+	/*text transform is used to transform the case of text using CSS*/
+	text-transform: uppercase;
+	opacity: 0;
+	transition: 
+		top 1s ease-out,
+		opacity 0.8s ease-in;
+}
+
+.img-slide.active .img-overlay-text {
+	top: 50%;
+	opacity: 1;
+}
+
+.placeholder-img {
+	opacity: 0;
+}
+
+/*showing the active image slide*/
+.img-slide.active {
+	display: block;
+}
+
+
+.js-color {
+	width: 30%;
+	margin: 1%;
+	height: 150px;
+	background: blue;
+	float: left;
+}
+
+/*footer styles*/
+footer {
+	background: #F44336;
+	padding: 15px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.company-info {
+	background: #1976D2;
+}
+
+.links {
+	background: #FFEB3B;
+}
+
+.social-media {
+	background: #757575;
+}
+
+/*This media query will only target the tablet size*/
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+	header {
+		background: #FFEB3B;
+	}
+}
+
+/*This media query targets, tablet and above*/
+@media only screen and (min-width: 768px) {
+	
+	/*header styles*/
+
+	/*the following css is used to restrict the content beyond 1280px*/
+	/*This is to make sure the main content is in the readbable area for large screen sizes*/
+	header, main, footer {
+
+		max-width: 1280px;
+		margin: 0 auto;
+
+	}
+
+	.desktop-nav {
+		display: block;
+	}
+
+	.mobile-nav-container {
+		display: none;
+	}
+	.mobile-nav {
+		display: none;
+	}
+
+	.ham {
+		display: none;
+		height: 15px;
+		margin:15px;
+		padding-top: 5px;
+		position: relative;
+		float: right;
+		cursor: pointer;
+	}
+
+	.ham, .ham:before, .ham:after {
+		width: 30px;
+		border-top: 5px solid black;
+	}
+
+	.ham:before {
+		content: "";
+		display:block;
+		position: absolute;
+		background: black;
+	}
+
+	.ham:after {
+		content: "";
+		display: block;
+		background: black;
+		position: absolute;
+		bottom: 0;
+	}
+
+	.site-content {
+		float: left;
+		width: 70%;
+		box-sizing: border-box;
+	}
+
+	.site-sidebar {
+		float: left;
+		width: 30%;
+		box-sizing: border-box;
+	}
+
+
+
+	.col-footer {
+		width: 31%;
+		/*total width = 31% + 1%(left margin) + 1% (right margin) */
+		box-sizing: border-box;
+		/*border box adjusts the width according to the padding only and does not consider margins*/
+		/*Therefore the space used by margins should be manually adjusted in the width declaration*/
+		margin: 0 1%;
+		padding: 10px;
+		float: left;
+	}
+}
+
+/*Desktop First Media Query*/
+/* this is in case you have a lot of complex styles for desktop and do not want to change the styles for desktop layout*/
+/*These media queries will target the screen sizes for smaller devices*/
+/*The following media query targets the screen sizes that are less than 768px*/
+@media only screen and (max-width: 768px) {
+	footer {
+		background: #FFEB3B;
+	}
+}

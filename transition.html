@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Transitions & Transforms</title>
+	<style type="text/css">
+		.box {
+			width: 150px;
+			height: 100px;
+			margin-bottom: 20px;
+			background: #FF5722;
+		}
+
+		/*:hover pseudo class is used to target styles when an element is hovered-over by mouse cursor*/
+		.box:hover {
+			width: 200px;
+			background: #FFEB3B;
+		}
+
+		.transition-example {
+			/*the css property that should be transitioned*/
+			/*transition-property: color;*/
+			/*transition-property: height;*/
+			/*All CSS properties for an element can be transtioned*/
+			/*Two main exceptions being z-index and display property*/
+			transition-property: width;
+			/*this is the amount of time the transition would run for*/
+			/*in seconds (1s) or milliseconds (1000ms)*/
+			transition-duration: 1s;
+			/*transition timing function defines how the transition animation runs*/
+			transition-timing-function: linear;
+
+		}
+
+		.transition-with-delay {
+
+			transition-property: width;
+			transition-duration: 1s;
+			transition-timing-function: linear;
+			/*transition delay tells the browser to wait for the given amount of time before starting the transition*/
+			transition-delay: 1s;
+		}
+
+		.transition-shorthand-all {
+			/*transition: property(all) duration timing-function*/
+			/*all creates transtioning for all the properties that are changing*/
+			transition: all 1s linear;
+		}
+
+		.transition-ease {
+			/*ease will set the timing function to start slow and end slow*/
+			transition: all 1s ease;
+		}
+
+		.transition-ease-out{
+			/*animation starts quickly but ends slow*/
+			transition: all 1s ease-out;
+		}
+
+		.transition-ease-in {
+			/*animnation starts slowly but ends quickly*/
+			transition: all 1s ease-in;
+		}
+
+		.transition-ease-in-out {
+			/*amination starts slowly and ends slowly*/
+			transition: all 1s ease-in-out;
+		}
+
+		.transition-two-prop {
+			/*To define more than one transtion property , use comma separated values*/
+			/*to improve readability, we write different properties on separate lines*/
+			transition: 
+				background 0.5s ease-out, 
+				width 2s ease-in;
+		}
+
+		/*TRANSFORMS*/
+
+		.transform-rotate {
+			/*rotate(angle)*/
+			/*This rotates the box by the specified angle given in the brackets*/
+			/*postive eg : transform: rotate(15deg)*/
+			/*negative eg : transform: rotate(-15deg)*/
+			/*vertical eg: transfor: rotate(90deg)*/
+			/*horizontal flip is 180deg*/
+			/*reverse vertical is 270deg*/
+
+			/*0deg to 360 deg*/
+			transform: rotate(30deg);
+
+		}
+
+		.transform-scale {
+
+			transform: scale(1.5,0.5);
+			/*transform:scale(xWidth, xHeight)*/
+			/*transform: scale(1.5x horizontally, 0.5 time vertically)*/
+		}
+
+		.transform-translate {
+			transform: translate(200px, -20px);
+			/*translate(x,y)*/
+			/*x is horizontal movement*/
+			/* y is vertical movement*/
+		}
+
+	</style>
+</head>
+<body>
+	<h2>CSS transitions</h2>
+	<div class="box transition-example">CSS transition</div>
+	<div class="box transition-with-delay">CSS tranition with Delay</div>
+	<div class="box transition-shorthand-all">CSS tranition shorthand all</div>
+	<div class="box transition-ease">CSS transition with Ease</div>
+	<div class="box transition-ease-out">CSS transition with Ease out</div>
+	<div class="box transition-ease-in">CSS transition with Ease in</div>
+	<div class="box transition-ease-in-out">CSS transtion with Ease In & Out</div>
+	<div class="box transition-two-prop">Transition with two properties</div>
+
+	<h2>CSS transform</h2>
+	<div class="box transform-rotate">Rotate</div>
+	<div class="box transform-scale">Scale</div>
+	<div class="box transform-translate">Translate</div>
+</body>
+</html>
