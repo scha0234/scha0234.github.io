@@ -1,202 +1,115 @@
 <!DOCTYPE html>
-<html lang="en-ca">
+<html lang="en">
 <head>
-	<title>Responsive CSS</title>
+<!-- Title -->
+<title>Secretary Bird Exhibit</title>
+<!-- Title End -->
 
-	<link rel="stylesheet" type="text/css" href="styles/style.css">
-
+<!-- Links/Metas -->
+<link rel="stylesheet" type="text/css" href="fonts/stylesheet.css">
+<link rel="stylesheet" type="text/css" href="styles/styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<script src="scripts/script.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="scripts/js-validation.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="styles/validation_styles.css">
 </head>
+<!-- Links/Metas -->
+
+
 <body>
-	<div class="overlay-container">
-		<div class="loader"></div>
-	</div>
-	<!-- header start -->
-	<header class="site-header clearfix" id="site-header">
-		<div class="logo">Logo</div>
 
-		<!-- main navigation start -->
-		<nav class="main-nav-container desktop-nav">
-			<ul class="main-nav clearfix">
-				<li>
-					<a href="contact-us.html">Contact Us</a>
-				</li>
-				<li>
-					<a href="about-us.html">About Us</a>
-					<ul class="sub-nav">
-						<li>
-							<a href="team.html">Team</a>
-						</li>
-						<li>
-							<a href="history.html">History</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="images.html">Images</a>
-				</li>
-			</ul>
-		</nav>
-		<!-- main navigation end -->
-		<div class="ham"></div>
-		<!-- mobile navigation start -->
-		<div class="mobile-nav-container clearfix">
-			<nav class="main-nav-container mobile-nav">
-			<ul class="main-nav">
-				<li>
-					<a href="contact-us.html">Contact Us</a>
-				</li>
-				<li>
-					<a href="about-us.html">About Us</a>
-				</li>
-				<li>
-					<a href="images.html">Images</a>
-				</li>
-			</ul>
-		</nav>
-		</div>
-		<!-- mobile navigation end -->
-	</header>
-	<!-- header end -->
-	<!-- main start -->
-	<main class="main clearfix" id="main">
-		<!-- site content start -->
-		<article class="col-main site-content">
-			<!-- main content start -->
-			<section class="main-content">
-				<h2>Site content</h2>
-				<p>lorem ipsum</p>
-			</section>
-			<!-- main content end -->
-			<!-- image gallery start -->
-			<section class="image-gallery">
-				<h3>Image Gallery</h3>
-				<div class="image-gallery-container clearfix">
-					<div id="img-slide-1" class="img-slide">
-						<img src="images/gallery-img-1.jpg" alt="Gallery Image 1">
-					</div>
-					<div id="img-slide-2" class="img-slide">
-						<img src="images/gallery-img-2.jpg" alt="Gallery Image 2">
-					</div>
-					<div id="img-slide-3" class="img-slide">
-						<img src="images/gallery-img-3.jpg" alt="Gallery Image 3">
-
-					</div>
-				</div>
-				<div class="image-gallery-thumb-container clearfix">
-					<!-- Placeholder image is created with the same dimensions as of the slide images -->
-					<!-- This can be either white or transparent -->
-					<!-- we use CSS to hide this by giving opacity:0 -->
-					<!-- This is required to give image-gallery-container a sense of width and height so that the content below it does not overlap with the "absolutely" positioned image slides -->
-					<img src="images/placeholder.jpg" alt="placeholder image" class="placeholder-img">
-					<!-- data-target attribute is used to pass extra information about this element to Jquery/Javascript whhich can be used for various functions -->
-					<!-- data- attribute is a customizable attribute therefore data-* where * can be any custom string, eg. data-target, data-access, data-name, data-function -->
-					<div class="img-slide-thumb img-slide-thumb-active" data-target="img-slide-1">
-						<img src="images/gallery-img-1.jpg" alt="Gallery Image 1">
-					</div>
-					<div class="img-slide-thumb" data-target="img-slide-2">
-						<img src="images/gallery-img-2.jpg" alt="Gallery Image 2">
-					</div>
-					<div class="img-slide-thumb" data-target="img-slide-3">
-						<img src="images/gallery-img-3.jpg" alt="Gallery Image 3">
-					</div>
-				</div>
-			</section>
-			<!-- image gallery end -->
-			<section class="js-basics clearfix">
-				<h4>JS basics</h4>
-				<div id="color-1" class="js-color"></div>
-				<div id="color-2" class="js-color"></div>
-				<div id="color-3" class="js-color"></div>
-				<div id="indicator-text"></div>
-				<button class="reset">Reset</button>
-			</section>
-		</article>
-		<!-- site content end -->
-		<!-- site sidebar start -->
-		<aside class="col-main site-sidebar">
-			<h4>Sidebar</h4>
-			<nav class="sidebar-nav-container">
-				<ul class="sidebar-nav">
-					<li>
-						<a href="https://google.com">Google</a>
-					</li>
-					<li>
-						<a href="https://wikipedia.com">Wikipedia</a>
-					</li>
-					<li>
-						<a href="https://w3schools.com">W3Schools</a>
-					</li>
-				</ul>
-			</nav>
-		</aside>
-		<!-- site sidebar end -->
-	</main>
-	<!-- main end -->
-	<!-- footer start -->
-	<footer class="footer" id="footer">
-		<div class="footer-container">
-			<section class="col-footer company-info">
-				<h4>Comapny info</h4>
-				<address>
-					<p>1385 Woodroffe Avenue</p>
-					<p>Ottawa, ON K2G 1V8</p>
-				</address>
-			</section>
-
-			<section class="col-footer links">
-				<h4>Links</h4>
-				<nav>
-					<ul>
-						<li>
-							<a href="contact-us.html">Contact Us</a>
-						</li>
-						<li>
-							<a href="about-us.html">About Us</a>
-						</li>
-						<li>
-							<a href="images.html">Images</a>
-						</li>
-					</ul>
-				</nav>
-			</section>
-
-			<section class="col-footer social-media">
-				<h4>Social Media</h4>
-				<nav>
-					<ul>
-						<li>
-							<a href="facebook.com">Facebook</a>
-						</li>
-						<li>
-							<a href="twitter.com">Twitter</a>
-						</li>
-						<li>
-							<a href="instagram.com">Instagram</a>
-						</li>
-					</ul>
-				</nav>
-			</section>
-		</div>
-
-		<p>Copyright &copy; Responsive CSS 2018</p>
-	</footer>
-	<!-- footer end -->
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-	<!-- script tag is not a self closing tag so it requires </script> to close itself -->
-	<!-- To add an external script file, script tag is used with src attribute containing the path of the script that we would like to include in this document -->
-	<script type="text/javascript" src="scripts/script.js"></script>
-	<script type="text/javascript" src="scripts/slider.js"></script>
-
-
-	<!-- script tag is an embeded way of adding javascript to your document -->
-	<!-- Script tag must be added at the bodttom of your HTML file before the closing of <body> tag -->
-	<!-- This will make sure that all the elements are properly loaded and ready for javascript to interact with them -->
-
-	<script type="text/javascript">
-		document.querySelector('.logo').style.backgroundColor="red";
+<!-- Navbar/Hamburger Menu -->
+<div class="navbar">
+  <div class="navbar">
+    <a href="index.html" class="navbutton">Home</a>
+    <a href="gallery.html" class="navbutton">Gallery</a>
+    <a href="contact.html" class="navbutton">Contact</a>
+    <div class="container" onclick="myFunction(this)">
+     <!-- Hamburger Nav Button -->
+      <div class="hamburgernav">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+      <ul class="mobilenav">
+        <li class="test"><a href="index.html">Home</a></li>
+        <li class="test"><a href="gallery.html">Gallery</a></li>
+        <li class="test"><a href="contact.html">Contact</a></li>
+      </ul>
+     <!-- Hamburger Nav -->
+   
+    <!-- Burger Menu Script -->
+    <script>
+    function myFunction(x) {
+    x.classList.toggle("change");
+    }
 	</script>
+    <!-- Burger Menu Script -->
+<!-- Navbar/Hamburger Menu End -->
+  </div>
+  </div>
+</div>
 
+<!-- Header -->
+<header class="header" style="padding:100px 16px">
+  <img src="images/bird_logo.png" class="logo" alt="Secretary Bird logo">
+  <h1 class="title">Secretary Birds</h1>
+  <p class="subtitle" style="font-family: 'Raleway', sans-serif;">Coming to an Imaginary Museum</p>
+</header>
+
+<!-- First Section -->
+<div class="section1">
+  <div class="section1content">
+    <div class="section1content">
+      <h1 class="heading1">Secretary Birds</h1>
+        <div class="clearfix">
+         <p class="content1" style="font-family: 'Raleway', sans-serif;"><img src="images/Secretary_Bird_Standing_resized.jpg" class="img2" alt="Secretary Bird Standing">The secretary bird (Sagittarius Serpentarius) is one of the largest predatory birds in Africa. It is usually found on the open plains and savannah of the sub-Saharan region of Africa. While it can fly, most of its time is spent on the ground, where it hunts its favoured prey. These majestic birds are most well known for their strange hunting practice. They use their long legs and sharp talons to kick the snakes they hunt, unleashing a devastating blow and often killing the snake instantly. Snakes make up the majority of the Secretary Bird’s diet.</p>
+        <p class="content1" style="padding-bottom: 30px; font-family: 'Raleway', sans-serif;
+		">The biggest thing that makes the Secretary Bird stand out, is its massive, crane-like legs. This differentiates it from other large predatory birds, in that the Secretary Bird is one of the only primarily terrestrial bird of prey. Everything from insects to mammals to reptiles are part of this predator’s preferred diet. These birds also have a slightly strange hunting style, opting to flush out prey by using their long legs to stomp the vegetation in grassy areas, before delivering their trademark kick. An adult male Secretary Bird can strike with a force equal to up to 5 times their body</p>
+       </div>
+<!-- First Section End -->
+    </div>
+
+
+  </div>
+</div>
+
+<!-- Second Section -->
+<div class="section2"></div>
+  <div class="section2content">
+    <div class="section2content">
+     <div class="section2">
+      <h1 class="heading2">Exhibit Information</h1>
+      <div class="clearfix">
+      <p class="section2content1" style="font-family: 'Raleway', sans-serif;"><img src="images/Secretary_Bird_with_open_beak1.jpg" class="img3" alt="Secretary Bird With Open Beak">Come to The Imaginary Museum to see Secretary Birds up close. This exhibit is devoted to the preservation and management of Secretary Birds, whose numbers have dwindled over the past century. 50% of proceeds from this exhibit go towards wildlife organizations that can help protect these majestic birds.</p>
+      <p class="section2content1" style="font-family: 'Raleway', sans-serif;">In this exhibit, visitors can personally observe the birds of prey. Housing the largest collection of aviary skeletons in the universe, we at the Imaginary Museum are showcasing all aspects of the Secretary Bird. Learn everything from their skeletal structure, to their mating habits to their hunting patterns, and everything between. Winners of the raffle can even take home their very own Secretary Bird.</p>
+       <p class="section2content1" style="font-family: 'Raleway', sans-serif;">This exhibit will be open from January 1st 2018 all the way through January 2nd 3018.</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Second Section End -->
+
+<!-- Banner Image -->
+<img class="bannerimage" src="images/Bird_Header_Picture.jpeg" alt="Secretary Bird logo">
+<!-- Banner Image End -->
 </body>
+<!-- Footer -->
+<footer class="foot">  
+  <div class="foot">
+    <div class="socialmediabtn">
+    <a id="google-link" class="fa fa-instagram" href="instagram.com"></a>
+    <a id="wiki-link" class="fa fa-youtube" href="wikipedia.com"></a>
+    <a id="twitter-link" class="fa fa-twitter" href="twitter.com"></a>
+    <a id="facebook-link" class="fa fa-facebook" href="facebook.com"></a>
+    <p class="copyright" style="font-size: 12px">Copyright &copy; 2018 William Schaillee</p>
+  </div>
+ </div>
+</footer>
+<!-- Footer End -->
 </html>

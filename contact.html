@@ -5,69 +5,71 @@
 <title>Secretary Bird Exhibit</title>
 <!-- Title End -->
 
-</head>
 <!-- Links/Metas -->
+<link rel="stylesheet" type="text/css" href="fonts/stylesheet.css">
 <link rel="stylesheet" type="text/css" href="styles/styles.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script type="text/javascript" src="scripts/script.js"></script>
+<meta charset="utf-8">
+<script src="scripts/script.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="scripts/js-validation.js"></script>
+<script src="scripts/js-validation.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="styles/validation_styles.css">
+</head>
 <!-- Links/Metas -->
+
+
 <body>
 
 <!-- Navbar/Hamburger Menu -->
 <div class="navbar">
   <div class="navbar">
     <a href="index.html" class="navbutton">Home</a>
-    <a href="#" class="navbutton">About</a>
+    <a href="gallery.html" class="navbutton">Gallery</a>
     <a href="contact.html" class="navbutton">Contact</a>
     <div class="container" onclick="myFunction(this)">
-     <!-- Hamburger Nav -->
+     <!-- Hamburger Nav Button -->
       <div class="hamburgernav">
         <div class="bar1"></div>
         <div class="bar2"></div>
         <div class="bar3"></div>
       </div>
-      </div>
-      <div class="mobilenav">
-        <a href="index.html"><li>Home</li></a>
-        <a href="#"><li>About</li></a>
-        <a href="contact.html"><li>Contact</li></a>
-      </div>
+      <ul class="mobilenav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
      <!-- Hamburger Nav -->
-     <!-- Burger Menu Script -->
+   
+    <!-- Burger Menu Script -->
     <script>
     function myFunction(x) {
     x.classList.toggle("change");
     }
-    </script>
+	</script>
     <!-- Burger Menu Script -->
-
-  </div>
 <!-- Navbar/Hamburger Menu End -->
-
+  </div>
   </div>
 </div>
 
-</body>
 <!-- Header -->
 <header class="header" style="padding:100px 16px">
   <img src="images/bird_logo.png" class="logo" alt="Secretary Bird logo">
   <h1 class="title">Secretary Birds</h1>
-  <p class="subtitle">Coming to an Imaginary Museum</p>
+  <p class="subtitle" style="font-family: 'Raleway', sans-serif;">Coming to an Imaginary Museum</p>
 </header>
 
 	<div class="wrapper">
 		<!-- HTML form tags -->
 		<section>
-			<h1>HTML forms</h1>
+			<h2 class="contacthead">Contact Us</h2>
+
 			<form id="htmlForm" action="somepage.php" method="get">
 				<div class="input-container required validate">
-
-					<label class="input-label label-text" for="firstName">First Name</label>
+					<label class="input-label label-text" for="firstName">Name</label>
+					<br>
 
 					<input type="text" name="firstName" id="firstName" data-validation-type="text">
 					<p class="feedback"></p>
@@ -75,6 +77,7 @@
 
 				<div class="input-container required validate">
 					<label class="input-label label-text" for="userEmail">Email</label>
+					<br>
 					<input type="email" name="userEmail" id="userEmail" data-validation-type="email">
 					<p class="feedback"></p>
 
@@ -83,8 +86,9 @@
 
 				<div class="input-container required validate">
 					<label class="input-label label-text" for="summary">Summary</label>
+					<br>
 
-					<textarea name="summary" id="summary"></textarea>
+					<textarea name="summary" id="summary" rows="10" cols="40"></textarea>
 					<p class="feedback"></p>
 
 				</div>
@@ -93,55 +97,48 @@
 				<div class="input-container required-checkbox">
 					<h4 class="label-text">Type of Inquiry</h4>
 
+
 					<label for="scheduling">
 						
-						<input type="checkbox" name="subject" id="scheduling" value="Scheduling">
+						<input type="checkbox" name="typeinquiry" id="scheduling" value="Scheduling">
 					</label>
-					<br>
 					Scheduling
-					<label for="history">
-						History
-						<input type="checkbox" name="subject" id="history" value="History">
+					<br>
+					<label for="technical">
+						<input type="checkbox" name="typeinquiry" id="technical" value="Technical">
 					</label>
-					
+					Technical Problems
+					<br>
+					<label for="other">
+						<input type="checkbox" name="typeinquiry" id="other" value="Other">
+					</label>
+					Other
 					<p class="feedback"></p>
 					
 				</div>
 
-				<div class="input-container required-checkbox">
-
-
 				<div class="input-container">
-					<!-- input type radio is used to create radio buttons -->
-					<!-- unlike the checkboxes only one out the set can be selected at a time -->
-					<!-- they have same name attr. but different id -->
-					<!-- to have a default checked, "checked" attribute is used -->
-					<h3>Sign up for our Newsletter?</h3>
+					<h4>Sign up for our Newsletter?</h4>
 					<label for="yes">
-						Yes
-						<input type="radio" name="forms" id="yes" checked>
-
+					<input type="radio" name="forms" id="yes" checked>
 					</label>
+					Yes
 					<br>
 					<label for="no">
-						No
 						<input type="radio" name="forms" id="no">
 					</label>
+					No
 					<p class="feedback"></p>
-					
 				</div>
 
         		<div class="submitbtn">
           			<button type="submit" class="submitbtn1" id="submitbtn1">Submit</button>
-        		</div>
+       			</div>
+
 			</form>
 		</section>
 	</div>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	
-	<script type="text/javascript" src="scripts/script.js"></script>
-	<script type="text/javascript" src="scripts/js-validation.js"></script>
 
 <!-- Banner Image -->
 <img class="bannerimage" src="images/Bird_Header_Picture.jpeg" alt="Secretary Bird logo">
