@@ -9,7 +9,7 @@ function validation_init(){
 		if(!required_error && !validate_error) {
 			alert('You have successfully completed the form');
 		} else {
-			alert('There are errors in form');
+			alert('There are errors in the form');
 		}
 	});
 }
@@ -43,6 +43,7 @@ function required_check() {
 			console.log('entered value');
 			$(required_container).addClass('has-success');
 			$(required_container).removeClass('has-error');
+			$(feedback).text('  ');
 		}
 		$(feedback).fadeIn(300);
 	});
@@ -69,6 +70,7 @@ function required_check() {
 		if(check_counter>0) {
 			$(req_check_container).addClass('has-success');
 			$(req_check_container).removeClass('has-error');
+			$(checkbox_feedback).text('   ')
 
 		} else {
 			$(req_check_container).removeClass('has-success');
@@ -119,6 +121,7 @@ function validate_input() {
 			} else {
 				$(validate_container).removeClass('has-error');
 				$(validate_container).addClass('has-success');
+				
  			}
 
 			$(feedback).html(feedback_text);

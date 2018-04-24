@@ -5,6 +5,16 @@ html {box-sizing: border-box;}
   background-color: #ffa31a
 }
 
+.mobilenav {z-index:1000000; font-weight:bold; font-size:0.8em; width: 100%; right: 0px; background:#f1f1f1;  position:absolute; text-align:center; font-size:12px; display: none; top: 50px}
+.mobilenav {margin: 0; padding: 0; list-style-type: none; list-style-image: none;}
+.mobilenav li {display: block;   padding:15px 0 15px 0; border-bottom:#dddddd 1px solid;}
+.mobilenav li:hover{display: block;    background:#ffffff; padding:15px 0 15px 0; border-bottom:#dddddd 1px solid;}
+.mobilenav ul li a { text-decoration:none;  margin: 0px; color:#666;}
+.mobilenav ul li a:hover {  color: #666; text-decoration:none;}
+.mobilenav a{text-decoration:none; color:#666;}
+.mobilenav a:hover{text-decoration:none; color:#666;}
+
+
 /*Hamburger Menu*/
 .container {
     display: inline-block;
@@ -26,15 +36,6 @@ html {box-sizing: border-box;}
     -webkit-transform: rotate(45deg) translate(-8px, -8px);
     transform: rotate(45deg) translate(-8px, -8px);
 }
-
-.mobilenav {z-index:1000000; font-weight:bold; font-size:0.8em; width:100%; background:#f1f1f1;  position:absolute; text-align:center; font-size:12px; display: none; top: 50px}
-.mobilenav {margin: 0; padding: 0; list-style-type: none; list-style-image: none;}
-.mobilenav li {display: block;   padding:15px 0 15px 0; border-bottom:#dddddd 1px solid;}
-.mobilenav li:hover{display: block;    background:#ffffff; padding:15px 0 15px 0; border-bottom:#dddddd 1px solid;}
-.mobilenav ul li a { text-decoration:none;  margin: 0px; color:#666;}
-.mobilenav ul li a:hover {  color: #666; text-decoration:none;}
-.mobilenav a{text-decoration:none; color:#666;}
-.mobilenav a:hover{text-decoration:none; color:#666;}
 
 /*Hamburger Menu*/
 
@@ -146,6 +147,7 @@ padding-bottom: 15px
   .bar1,.bar2,.bar3 {
     display: none;
   }
+
   .img2 {
   float: right;
   width: 250px;
@@ -259,6 +261,9 @@ color: black
 .content1,.section2content1,.section2content2 {
 margin-left: 75px;
 margin-right: 75px
+}
+.mobilenav {
+  display: none;
 }
 .content1title {
 text-align: left;

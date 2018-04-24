@@ -45,6 +45,9 @@ body {
 			border: 1px solid green;
 			background: lightgreen;
 		} 
+		.has-success .feedback {
+			display: hide;
+		}
 
 
 		/*Error Styles*/
